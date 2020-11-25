@@ -1,0 +1,808 @@
+string $renderLayers_ac[] = `ls -type renderLayer`;
+string $renderLayers[] = {};
+for($eachRenLay in $renderLayers_ac){
+    int $chk = `gmatch $eachRenLay "*defaultRenderLayer*"`;
+    if ($chk == 1){
+        //do nothing
+        print "if - def";
+    }
+    else{
+        print "else - def";
+        string $match[] = {$eachRenLay};
+        appendStringArray($renderLayers, $match, 1);
+    }
+}
+
+print $renderLayers;
+
+int $size = size($renderLayers);
+
+if (`windowPref -ex Layers_win`==1) windowPref -r Layers_win;
+if(`window -q -ex Layers_win`) deleteUI Layers_win;
+	string $win_name = `window -w 200 -h (15*$size+15+20+20+30) -s 0 -mxb 0 -mnb 1 -tlb 1 -bgc 0.071 0.071 0.071 -tbm 1 -t "Layers Add" Layers_win`;
+	columnLayout -adjustableColumn true;
+
+
+	text -l "";
+
+	if($size == 0){
+		text "Currently No Render Layers";
+	}
+
+	if(0<$size){
+		checkBox -v 1 -label $renderLayers[0] lay0;
+		int $render_stat = `getAttr ($renderLayers[0] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay0;
+		}
+	}
+	if(1<$size){
+		checkBox -v 1 -label $renderLayers[1] lay1;
+		int $render_stat = `getAttr ($renderLayers[1] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay1;
+		}
+	}
+	if(2<$size){
+		checkBox -v 1 -label $renderLayers[2] lay2;
+		int $render_stat = `getAttr ($renderLayers[2] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay2;
+		}
+	}
+	if(3<$size){
+		checkBox -v 1 -label $renderLayers[3] lay3;
+		int $render_stat = `getAttr ($renderLayers[3] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay3;
+		}
+	}
+	if(4<$size){
+		checkBox -v 1 -label $renderLayers[4] lay4;
+		int $render_stat = `getAttr ($renderLayers[4] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay4;
+		}
+	}
+	if(5<$size){
+		checkBox -v 1 -label $renderLayers[5] lay5;
+		int $render_stat = `getAttr ($renderLayers[5] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay5;
+		}
+	}
+	if(6<$size){
+		checkBox -v 1 -label $renderLayers[6] lay6;
+		int $render_stat = `getAttr ($renderLayers[6] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay6;
+		}
+	}
+	if(7<$size){
+		checkBox -v 1 -label $renderLayers[7] lay7;
+		int $render_stat = `getAttr ($renderLayers[7] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay7;
+		}
+	}
+	if(8<$size){
+		checkBox -v 1 -label $renderLayers[8] lay8;
+		int $render_stat = `getAttr ($renderLayers[8] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay8;
+		}
+	}
+	if(9<$size){
+		checkBox -v 1 -label $renderLayers[9] lay9;
+		int $render_stat = `getAttr ($renderLayers[9] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay9;
+		}
+	}
+	if(10<$size){
+		checkBox -v 1 -label $renderLayers[10] lay10;
+		int $render_stat = `getAttr ($renderLayers[10] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay10;
+		}
+	}
+	if(11<$size){
+		checkBox -v 1 -label $renderLayers[11] lay11;
+		int $render_stat = `getAttr ($renderLayers[11] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay11;
+		}
+	}
+	if(12<$size){
+		checkBox -v 1 -label $renderLayers[12] lay12;
+		int $render_stat = `getAttr ($renderLayers[12] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay12;
+		}
+	}
+	if(13<$size){
+		checkBox -v 1 -label $renderLayers[13] lay13;
+		int $render_stat = `getAttr ($renderLayers[13] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay13;
+		}
+	}
+	if(14<$size){
+		checkBox -v 1 -label $renderLayers[14] lay14;
+		int $render_stat = `getAttr ($renderLayers[14] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay14;
+		}
+	}
+	if(15<$size){
+		checkBox -v 1 -label $renderLayers[15] lay15;
+		int $render_stat = `getAttr ($renderLayers[15] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay15;
+		}
+	}
+	if(16<$size){
+		checkBox -v 1 -label $renderLayers[16] lay16;
+		int $render_stat = `getAttr ($renderLayers[16] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay16;
+		}
+	}
+	if(17<$size){
+		checkBox -v 1 -label $renderLayers[17] lay17;
+		int $render_stat = `getAttr ($renderLayers[17] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay17;
+		}
+	}
+	if(18<$size){
+		checkBox -v 1 -label $renderLayers[18] lay18;
+		int $render_stat = `getAttr ($renderLayers[18] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay18;
+		}
+	}
+	if(19<$size){
+		checkBox -v 1 -label $renderLayers[19] lay19;
+		int $render_stat = `getAttr ($renderLayers[19] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay19;
+		}
+	}
+	if(20<$size){
+		checkBox -v 1 -label $renderLayers[20] lay20;
+		int $render_stat = `getAttr ($renderLayers[20] + ".renderable")`;
+		if($render_stat==0){
+			checkBox -e -v 0 lay20;
+		}
+	}
+
+	text -l "";
+
+	rowLayout -numberOfColumns 2;
+		button -w 100 -l "Add" -c "addtosellay($renderLayers,$size)";
+		button -w 100 -l "Remove" -c "delfromsellay($renderLayers,$size)";
+	setParent..;
+	text -l "";
+	separator -h 5 -style "singleDash" -bgc 0.5 0.5 0.5;
+	//text -l "-----------------------------";
+	//text -label "||   Create New Layer   ||";
+	//text -l "-----------------------------";
+	//textField Layer_Name;
+	//button -l "Create" -c "createandadd()";
+	button -l "bty" -c "createandbty()";
+	button -l "matte" -c "createandmatte()";
+	button -l "mouth matte" -c "createandmmatte()";
+	button -l "water" -c "createandwater()";
+showWindow;
+
+global proc addtosellay(string $renderLayers[], int $size){
+	string $selection_Rlist[] = `ls -selection`;
+	//print $selection_Rlist;
+
+	int $sel_size = size($selection_Rlist);
+	if($sel_size == 0){
+		print "!..Nothing is selected..!";
+	}
+
+	if(0<$size){
+		int $lay_0_state = `checkBox -q -v lay0`;
+		if($lay_0_state==1){
+			//print($renderLayers[1]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[0] $selection_ind;
+			}
+		}
+	}
+
+	if(1<$size){
+		int $lay_1_state = `checkBox -q -v lay1`;
+		if($lay_1_state==1){
+			//print($renderLayers[1]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[1] $selection_ind;
+			}
+		}
+	}
+
+	if(2<$size){
+		int $lay_2_state = `checkBox -q -v lay2`;
+		if($lay_2_state==1){
+			//print($renderLayers[2]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[2] $selection_ind;
+			}
+		}
+	}
+
+	if(3<$size){
+		int $lay_3_state = `checkBox -q -v lay3`;
+		if($lay_3_state==1){
+			//print($renderLayers[3]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[3] $selection_ind;
+			}
+		}
+	}
+
+	if(4<$size){
+		int $lay_4_state = `checkBox -q -v lay4`;
+		if($lay_4_state==1){
+			//print($renderLayers[4]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[4] $selection_ind;
+			}
+		}
+	}
+
+	if(5<$size){
+		int $lay_5_state = `checkBox -q -v lay5`;
+		if($lay_5_state==1){
+			//print($renderLayers[5]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[5] $selection_ind;
+			}
+		}
+	}
+
+	if(6<$size){
+		int $lay_6_state = `checkBox -q -v lay6`;
+		if($lay_6_state==1){
+			//print($renderLayers[6]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[6] $selection_ind;
+			}
+		}
+	}
+
+	if(7<$size){
+		int $lay_7_state = `checkBox -q -v lay7`;
+		if($lay_7_state==1){
+			//print($renderLayers[7]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[7] $selection_ind;
+			}
+		}
+	}
+
+	if(8<$size){
+		int $lay_8_state = `checkBox -q -v lay8`;
+		if($lay_8_state==1){
+			//print($renderLayers[8]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[8] $selection_ind;
+			}
+		}
+	}
+	
+	if(9<$size){
+		int $lay_9_state = `checkBox -q -v lay9`;
+		if($lay_9_state==1){
+			//print($renderLayers[9]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[9] $selection_ind;
+			}
+		}
+	}
+
+	if(10<$size){
+		int $lay_10_state = `checkBox -q -v lay10`;
+		if($lay_10_state==1){
+			//print($renderLayers[10]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[10] $selection_ind;
+			}
+		}
+	}
+
+	if(11<$size){
+		int $lay_11_state = `checkBox -q -v lay11`;
+		if($lay_11_state==1){
+			//print($renderLayers[11]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[11] $selection_ind;
+			}
+		}
+	}
+
+	if(12<$size){
+		int $lay_12_state = `checkBox -q -v lay12`;
+		if($lay_12_state==1){
+			//print($renderLayers[12]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[12] $selection_ind;
+			}
+		}
+	}
+
+	if(13<$size){
+		int $lay_13_state = `checkBox -q -v lay13`;
+		if($lay_13_state==1){
+			//print($renderLayers[13]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[13] $selection_ind;
+			}
+		}
+	}
+
+	if(14<$size){
+		int $lay_14_state = `checkBox -q -v lay14`;
+		if($lay_14_state==1){
+			//print($renderLayers[14]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[14] $selection_ind;
+			}
+		}
+	}
+
+	if(15<$size){
+		int $lay_15_state = `checkBox -q -v lay15`;
+		if($lay_15_state==1){
+			//print($renderLayers[15]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[15] $selection_ind;
+			}
+		}
+	}
+
+	if(16<$size){
+		int $lay_16_state = `checkBox -q -v lay16`;
+		if($lay_16_state==1){
+			//print($renderLayers[16]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[16] $selection_ind;
+			}
+		}
+	}
+
+	if(17<$size){
+		int $lay_17_state = `checkBox -q -v lay17`;
+		if($lay_17_state==1){
+			//print($renderLayers[17]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[17] $selection_ind;
+			}
+		}
+	}
+
+	if(18<$size){
+		int $lay_18_state = `checkBox -q -v lay18`;
+		if($lay_18_state==1){
+			//print($renderLayers[18]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[18] $selection_ind;
+			}
+		}
+	}
+
+	if(19<$size){
+		int $lay_19_state = `checkBox -q -v lay19`;
+		if($lay_19_state==1){
+			//print($renderLayers[19]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[19] $selection_ind;
+			}
+		}
+	}
+
+	if(20<$size){
+		int $lay_20_state = `checkBox -q -v lay20`;
+		if($lay_20_state==1){
+			//print($renderLayers[20]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -noRecurse $renderLayers[20] $selection_ind;
+			}
+		}
+	}
+}
+
+global proc delfromsellay(string $renderLayers[], int $size){
+	string $selection_Rlist[] = `ls -selection`;
+	//print $selection_Rlist;
+
+	int $sel_size = size($selection_Rlist);
+	if($sel_size == 0){
+		print "!..Nothing is selected..!";
+	}
+
+	if(0<$size){
+		int $lay_0_state = `checkBox -q -v lay0`;
+		if($lay_0_state==1){
+			//print($renderLayers[1]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[0] $selection_ind;
+			}
+		}
+	}
+
+	if(1<$size){
+		int $lay_1_state = `checkBox -q -v lay1`;
+		if($lay_1_state==1){
+			//print($renderLayers[1]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[1] $selection_ind;
+			}
+		}
+	}
+
+	if(2<$size){
+		int $lay_2_state = `checkBox -q -v lay2`;
+		if($lay_2_state==1){
+			//print($renderLayers[2]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[2] $selection_ind;
+			}
+		}
+	}
+
+	if(3<$size){
+		int $lay_3_state = `checkBox -q -v lay3`;
+		if($lay_3_state==1){
+			//print($renderLayers[3]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[3] $selection_ind;
+			}
+		}
+	}
+
+	if(4<$size){
+		int $lay_4_state = `checkBox -q -v lay4`;
+		if($lay_4_state==1){
+			//print($renderLayers[4]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[4] $selection_ind;
+			}
+		}
+	}
+
+	if(5<$size){
+		int $lay_5_state = `checkBox -q -v lay5`;
+		if($lay_5_state==1){
+			//print($renderLayers[5]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[5] $selection_ind;
+			}
+		}
+	}
+
+	if(6<$size){
+		int $lay_6_state = `checkBox -q -v lay6`;
+		if($lay_6_state==1){
+			//print($renderLayers[6]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[6] $selection_ind;
+			}
+		}
+	}
+
+	if(7<$size){
+		int $lay_7_state = `checkBox -q -v lay7`;
+		if($lay_7_state==1){
+			//print($renderLayers[7]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[7] $selection_ind;
+			}
+		}
+	}
+
+	if(8<$size){
+		int $lay_8_state = `checkBox -q -v lay8`;
+		if($lay_8_state==1){
+			//print($renderLayers[8]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[8] $selection_ind;
+			}
+		}
+	}
+	
+	if(9<$size){
+		int $lay_9_state = `checkBox -q -v lay9`;
+		if($lay_9_state==1){
+			//print($renderLayers[9]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[9] $selection_ind;
+			}
+		}
+	}
+
+	if(10<$size){
+		int $lay_10_state = `checkBox -q -v lay10`;
+		if($lay_10_state==1){
+			//print($renderLayers[10]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[10] $selection_ind;
+			}
+		}
+	}
+
+	if(11<$size){
+		int $lay_11_state = `checkBox -q -v lay11`;
+		if($lay_11_state==1){
+			//print($renderLayers[11]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[11] $selection_ind;
+			}
+		}
+	}
+
+	if(12<$size){
+		int $lay_12_state = `checkBox -q -v lay12`;
+		if($lay_12_state==1){
+			//print($renderLayers[12]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[12] $selection_ind;
+			}
+		}
+	}
+
+	if(13<$size){
+		int $lay_13_state = `checkBox -q -v lay13`;
+		if($lay_13_state==1){
+			//print($renderLayers[13]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[13] $selection_ind;
+			}
+		}
+	}
+
+	if(14<$size){
+		int $lay_14_state = `checkBox -q -v lay14`;
+		if($lay_14_state==1){
+			//print($renderLayers[14]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[14] $selection_ind;
+			}
+		}
+	}
+
+	if(15<$size){
+		int $lay_15_state = `checkBox -q -v lay15`;
+		if($lay_15_state==1){
+			//print($renderLayers[15]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[15] $selection_ind;
+			}
+		}
+	}
+
+	if(16<$size){
+		int $lay_16_state = `checkBox -q -v lay16`;
+		if($lay_16_state==1){
+			//print($renderLayers[16]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[16] $selection_ind;
+			}
+		}
+	}
+
+	if(17<$size){
+		int $lay_17_state = `checkBox -q -v lay17`;
+		if($lay_17_state==1){
+			//print($renderLayers[17]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[17] $selection_ind;
+			}
+		}
+	}
+
+	if(18<$size){
+		int $lay_18_state = `checkBox -q -v lay18`;
+		if($lay_18_state==1){
+			//print($renderLayers[18]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[18] $selection_ind;
+			}
+		}
+	}
+
+	if(19<$size){
+		int $lay_19_state = `checkBox -q -v lay19`;
+		if($lay_19_state==1){
+			//print($renderLayers[19]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[19] $selection_ind;
+			}
+		}
+	}
+
+	if(20<$size){
+		int $lay_20_state = `checkBox -q -v lay20`;
+		if($lay_20_state==1){
+			//print($renderLayers[20]+" Layer is on!");
+			//print $selection_Rlist;
+			for($selection_ind in $selection_Rlist){
+				//print $selection_ind;
+				editRenderLayerMembers -remove -noRecurse $renderLayers[20] $selection_ind;
+			}
+		}
+	}
+}
+
+global proc createandbty(){
+	string $selection_Rlist[] = `ls -selection`;
+	global string $newlayername;
+
+	int $sel_size = size($selection_Rlist);
+	if($sel_size == 0){
+		print "!..Nothing is selected..!";
+	}
+
+	$newlayername = `createRenderLayer -name "bty" -number 1 -empty`;
+	for($selection_ind in $selection_Rlist){
+		editRenderLayerMembers -noRecurse $newlayername $selection_ind;
+	}
+}
+
+global proc createandmatte(){
+	string $selection_Rlist[] = `ls -selection`;
+	global string $newlayername;
+
+	int $sel_size = size($selection_Rlist);
+	if($sel_size == 0){
+		print "!..Nothing is selected..!";
+	}
+
+	$newlayername = `createRenderLayer -name "matte" -number 1 -empty`;
+	for($selection_ind in $selection_Rlist){
+		editRenderLayerMembers -noRecurse $newlayername $selection_ind;
+	}
+}
+
+global proc createandmmatte(){
+	string $selection_Rlist[] = `ls -selection`;
+	global string $newlayername;
+
+	int $sel_size = size($selection_Rlist);
+	if($sel_size == 0){
+		print "!..Nothing is selected..!";
+	}
+
+	$newlayername = `createRenderLayer -name "mouth_matte" -number 1 -empty`;
+	for($selection_ind in $selection_Rlist){
+		editRenderLayerMembers -noRecurse $newlayername $selection_ind;
+	}
+}
+
+global proc createandwater(){
+	string $selection_Rlist[] = `ls -selection`;
+	global string $newlayername;
+
+	int $sel_size = size($selection_Rlist);
+	if($sel_size == 0){
+		print "!..Nothing is selected..!";
+	}
+
+	$newlayername = `createRenderLayer -name "water" -number 1 -empty`;
+	for($selection_ind in $selection_Rlist){
+		editRenderLayerMembers -noRecurse $newlayername $selection_ind;
+	}
+}
+
+global proc createandadd(){
+	string $selection_Rlist[] = `ls -selection`;
+	global string $newlayername;
+
+	int $sel_size = size($selection_Rlist);
+	if($sel_size == 0){
+		print "!..Nothing is selected..!";
+	}
+
+	string $layername = `textField -q -tx Layer_Name`;
+	print $layername;
+
+	if($layername == ""){
+		$newlayername = `createRenderLayer -name "layer1" -number 1 -empty`;
+		for($selection_ind in $selection_Rlist){
+			editRenderLayerMembers -noRecurse $newlayername $selection_ind;
+		}
+	}
+	else{
+		$newlayername = `createRenderLayer -name $layername -number 1 -empty`;
+		for($selection_ind in $selection_Rlist){
+			editRenderLayerMembers -noRecurse $newlayername $selection_ind;
+		}
+		textField -e -tx "" Layer_Name;
+	}
+}
